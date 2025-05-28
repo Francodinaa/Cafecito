@@ -1,0 +1,324 @@
+/* Importar fuente 'Montserrat' de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/* Colores de la paleta para mayor elegancia */
+:root {
+    --color-blanco-puro: #FFFFFF;
+    --color-crema-suave: #FDF8F0; /* Un crema más profundo y cálido */
+    --color-taupe-calido: #A07F5C; /* Un marrón claro/taupe más sofisticado */
+    --color-marron-oscuro-elegante: #4F3624; /* Un marrón oscuro, rico y elegante */
+    --color-texto-general: #555555; /* Gris oscuro suave para el texto */
+}
+
+/* Reseteo básico y tipografía */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--color-texto-general); /* Texto general en gris oscuro suave */
+    background-color: var(--color-crema-suave); /* Fondo general en crema suave */
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1080px; /* Un poco más estrecho para un look premium */
+    margin: 0 auto;
+    padding: 30px; /* Más padding para mayor "aire" */
+}
+
+h1, h2, h3 {
+    color: var(--color-marron-oscuro-elegante); /* Títulos en marrón oscuro elegante */
+    text-align: center;
+    margin-bottom: 30px; /* Más espacio */
+    font-weight: 700;
+    letter-spacing: -0.8px; /* Ajuste para que se vea más ancho y moderno */
+    line-height: 1.2;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+/* Estilo del Header */
+.main-header {
+    background-color: var(--color-blanco-puro); /* Blanco puro para el header */
+    color: var(--color-texto-general);
+    padding: 25px 0; /* Más padding */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Sombra muy sutil */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 2.8em; /* Más grande */
+    color: var(--color-marron-oscuro-elegante);
+    letter-spacing: 1.5px; /* Más espaciado para un look bold y ancho */
+}
+
+.main-header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-header nav ul li {
+    margin-left: 35px; /* Más espacio entre elementos de navegación */
+}
+
+.main-header nav ul li a {
+    color: var(--color-marron-oscuro-elegante); /* Color del texto de navegación */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em; /* Un poco más grande */
+    text-transform: lowercase; /* Todas las letras en minúsculas aquí */
+    transition: color 0.3s ease;
+}
+
+.main-header nav ul li a:hover {
+    color: var(--color-taupe-calido); /* Color taupe cálido al pasar el cursor */
+}
+
+/* Secciones generales */
+section {
+    padding: 120px 0; /* Aún más padding para mayor espacio en blanco */
+    text-align: center;
+    opacity: 0; /* Inicialmente ocultas para la animación de scroll */
+    transform: translateY(50px); /* Más desplazamiento para la animación */
+    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Transición más larga y suave */
+}
+
+section.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Sección Hero */
+.hero-section {
+    background: linear-gradient(rgba(79, 54, 36, 0.6), rgba(79, 54, 36, 0.7)), /* Degradado de marrones más profundos */
+                url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjVlMzcxOHwxfDF8c2VhcmNofDJ8fGNvZmZlZSUyMGJhY2tncm91bmR8ZW58MHx8fHwxNjk5OTgzMzEz&ixlib=rb-4.0.3&q=80&w=1920') no-repeat center center/cover;
+    color: var(--color-blanco-puro);
+    padding: 200px 20px; /* Aún más padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 600px; /* Altura mínima mayor */
+    animation: backgroundZoom 18s infinite alternate ease-in-out; /* Animación más lenta */
+}
+
+@keyframes backgroundZoom {
+    0% { background-size: 100%; }
+    100% { background-size: 115%; } /* Zoom un poco más pronunciado */
+}
+
+.hero-section h2 {
+    font-size: 4.5em; /* Más grande aún */
+    margin-bottom: 25px;
+    color: var(--color-blanco-puro);
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.hero-section p {
+    font-size: 1.8em; /* Más grande */
+    max-width: 850px;
+    margin: 0 auto;
+    color: #f5f5f5;
+    font-weight: 400;
+}
+
+/* Sección de Equipo */
+.team-section {
+    background-color: var(--color-crema-suave);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px; /* Aún más espacio entre tarjetas */
+    margin-top: 60px;
+}
+
+.member-card {
+    background-color: var(--color-blanco-puro);
+    border-radius: 15px; /* Bordes más redondeados */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08); /* Sombra elegante */
+    padding: 35px;
+    width: 250px; /* Un poco más ancho */
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Transición más suave */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 140px; /* Altura mínima ajustada */
+}
+
+.member-card:hover {
+    transform: translateY(-15px); /* Desplazamiento más pronunciado */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15); /* Sombra más intensa al hover */
+}
+
+.member-card .member-name {
+    font-weight: 700; /* Nombre en negrita */
+    color: var(--color-marron-oscuro-elegante);
+    font-size: 1.3em; /* Texto del nombre más grande */
+    margin-bottom: 8px; /* Espacio entre nombre y descripción */
+}
+
+.member-card .member-description {
+    font-weight: 400;
+    color: var(--color-texto-general); /* Color de la descripción */
+    font-size: 1em; /* Tamaño normal para la descripción */
+    margin: 0; /* Eliminar margen extra */
+    font-style: italic; /* Para que la descripción se vea diferente */
+}
+
+/* Sección de Historia (con Pop-up al acercar el cursor) */
+.history-section {
+    background-color: #F8F3EC; /* Un tono de crema sutilmente diferente */
+    padding: 120px 0;
+    position: relative;
+}
+
+.history-trigger {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.history-trigger h3 {
+    margin-bottom: 15px;
+    color: var(--color-marron-oscuro-elegante);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Más espacio */
+    font-weight: 700;
+    font-size: 2em; /* Más grande */
+}
+
+.info-icon {
+    background-color: var(--color-taupe-calido); /* Color taupe para el icono */
+    color: var(--color-blanco-puro);
+    border-radius: 50%;
+    width: 35px; /* Más grande */
+    height: 35px; /* Más grande */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: transform 0.3s ease; /* Transición para el icono */
+}
+
+.history-trigger:hover .info-icon {
+    transform: scale(1.1); /* Ligero zoom al pasar el cursor */
+}
+
+.history-popup {
+    display: none;
+    position: absolute;
+    top: calc(100% + 25px); /* Más espacio debajo del h3 */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-taupe-calido); /* Fondo del popup en taupe cálido */
+    color: var(--color-blanco-puro);
+    padding: 30px; /* Más padding */
+    border-radius: 12px; /* Bordes más redondeados */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Sombra más pronunciada y elegante */
+    width: 380px; /* Un poco más ancho */
+    text-align: left;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transiciones más suaves */
+}
+
+.history-trigger:hover .history-popup {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(-15px); /* Más movimiento al aparecer */
+}
+
+/* Flecha del popup */
+.history-popup::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 15px; /* Más grande */
+    border-style: solid;
+    border-color: transparent transparent var(--color-taupe-calido) transparent;
+}
+
+
+/* Estilo del Footer */
+.main-footer {
+    background-color: var(--color-marron-oscuro-elegante); /* Fondo en marrón oscuro elegante */
+    color: var(--color-blanco-puro);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 1em;
+}
+
+/* Responsivo básico */
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+    }
+
+    .main-header nav ul {
+        margin-top: 25px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-header nav ul li {
+        margin: 0 18px 12px 18px;
+    }
+
+    .hero-section h2 {
+        font-size: 3.5em;
+    }
+
+    .hero-section p {
+        font-size: 1.4em;
+    }
+
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .member-card {
+        width: 90%;
+        padding: 25px;
+    }
+
+    .history-popup {
+        width: 90%;
+        left: 5%;
+        transform: translateX(0);
+        padding: 20px;
+    }
+    .history-trigger:hover .history-popup {
+         transform: translateX(0%) translateY(-10px);
+    }
+}
+3. El Archivo JavaScript (script.js) - Sin 
